@@ -1,0 +1,118 @@
+<section id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+
+                <div class="col-lg-12">
+                    <form id="contactForm"   action="form.php" method="POST"></form>
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="name" type="text" name="name" placeholder="Ingresa tú nombre"/>
+                            <label for="name">Nombre completo</label>
+                            <div class="invalid-feedback">Se requiere nombre.</div>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input class="form-control" name="email" id="email" type="email" placeholder="david.r.v@hotmail.com" />
+                            <label for="email">Email</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input class="form-control" name="phone" id="phone" type="phone" placeholder="Ingresa tú número de contacto"/>
+                            <label for="number">Número de teléfono</label>
+                            <div class="invalid-feedback">Se requiere número de contacto.</div>
+                        </div>
+                        <div class="box1">
+                            <label name="selecciona" for="Servicios row gx-4 gx-lg-5 justify-content-center"> Tipo de servicio</label>
+                            <select  id="selec"> 
+                                <option value="1">Selecciona que tonelaje necesitas</option>
+                                <option value="2">Grúa de 3 toneladas</option>
+                                <option value="3">Grúa de 5 toneladas</option>
+                                <option value="4">Grúa de 7 toneladas</option>
+                                <option value="5">Transporte de maquinaria</option>
+                            </select>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <div class="row container">
+                                <div class="col-12">
+                                    <div class="col-md-6">
+                                        <input type="checkbox" name="Opciones" id="Eslingas ">
+                                        <label class="form-check-label" for="flexCheckDefault">Requiero Eslingas </label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="checkbox" name="Opciones" id="Extensiones ">
+                                        <label class="form-check-label" for="flexCheckDefault">Requiero extensiones </label>
+                                    </div>
+                                </div>   
+                            </div>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <textarea class="form-control" name="textarea" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem"></textarea>
+                            <label for="message">Mensaje</label>
+                            <div class="invalid-feedback">Por favor escriba su consulta.</div>
+                        </div>
+
+                        <a href="../Pages/exito.html"><div class="d-grid">  <button class="btn btn-xl disabled" id="submitButton">Enviar</button></div></a>
+                   
+                    
+                </div>
+                
+            </div>
+            
+            
+            <div class="col-sm-6">
+                <div class="col-sm-12">
+                    <div class="accordion accordion-flush" id="accordionFlushExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingOne">
+                                <button class="accordion-button collapsed text-warning" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                <strong>¿Cómo funciona el servicio de arriendo con operador?</strong>
+                                </button>
+                            </h2>
+                            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                    Nuestro servicio de arriendo con operador incluye un operador certificado y combustible. Mínimo de 2 horas a contar desde que nuestra maquina deja nuestra instalación hasta que vuelve.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingTwo">
+                                <button class="accordion-button collapsed text-warning" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                <strong>¿Necesitas arriendo de grúa sin operador?</strong>
+                                </button>
+                            </h2>
+                            <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                    Contamos con servicios de arriendo de grúas horquilla sin operador y sin combustible. Ponte en contacto con nosotros para saber el tiempo mínimo de arriendo por grúa.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingThree">
+                                <button class="accordion-button collapsed text-warning" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                                <strong>¿Necesitas un servicio de transporte para tus maquinarias?</strong>  
+                                </button>
+                            </h2>
+                            <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                    ¡En R&A Grúas tenemos la solución para ti! Contamos con servicio de transporte de camión cama baja de hasta 9 toneladas.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingFour">
+                                <button class="accordion-button collapsed text-warning" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                                <strong>¿Tienes alguna petición adicional?</strong> 
+                                </button>
+                            </h2>
+                            <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                               Si tu atención requiere algún implemento adicional, como extensiones o eslingas, ¡no dudes en solicitarlas! estos implementos vienen incluidos dentro del precio del servicio. 
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>   
