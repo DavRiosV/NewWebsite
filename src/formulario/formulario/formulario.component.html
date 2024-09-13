@@ -2,62 +2,68 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
-
                 <div class="col-lg-12">
-                    <form id="contactForm"   action="form.php" method="POST"></form>
+                    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+                        <!-- Otros campos como nombre, email, teléfono, etc. -->
+                    
                         <div class="form-floating mb-3">
-                            <input class="form-control" id="name" type="text" name="name" placeholder="Ingresa tú nombre"/>
+                            <input class="form-control" formControlName="name" id="name" type="text" placeholder="Ingresa tu nombre" />
                             <label for="name">Nombre completo</label>
-                            <div class="invalid-feedback">Se requiere nombre.</div>
+                            <div *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched" class="invalid-feedback">Se requiere nombre.</div>
                         </div>
+                    
                         <div class="form-floating mb-3">
-                            <input class="form-control" name="email" id="email" type="email" placeholder="david.r.v@hotmail.com" />
+                            <input class="form-control" formControlName="email" id="email" type="email" placeholder="david.r.v@hotmail.com" />
                             <label for="email">Email</label>
+                            <div *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched" class="invalid-feedback">Se requiere un email válido.</div>
                         </div>
+                    
                         <div class="form-floating mb-3">
-                            <input class="form-control" name="phone" id="phone" type="phone" placeholder="Ingresa tú número de contacto"/>
-                            <label for="number">Número de teléfono</label>
-                            <div class="invalid-feedback">Se requiere número de contacto.</div>
+                            <input class="form-control" formControlName="phone" id="phone" type="tel" placeholder="Ej: +56912345678" />
+                            <label for="phone">Número de teléfono</label>
+                            <div *ngIf="contactForm.get('phone')?.invalid && contactForm.get('phone')?.touched" class="invalid-feedback">Se requiere un número de contacto válido (+569 seguido de 8 dígitos).</div>
                         </div>
-                        <div class="box1">
-                            <label name="selecciona" for="Servicios row gx-4 gx-lg-5 justify-content-center"> Tipo de servicio</label>
-                            <select  id="selec"> 
-                                <option value="1">Selecciona que tonelaje necesitas</option>
-                                <option value="2">Grúa de 3 toneladas</option>
-                                <option value="3">Grúa de 5 toneladas</option>
-                                <option value="4">Grúa de 7 toneladas</option>
-                                <option value="5">Transporte de maquinaria</option>
+                    
+                        <div class="box1 mb-3">
+                            <label for="selec">Tipo de servicio</label>
+                            <select class="form-control" formControlName="servicio" id="selec">
+                                <option value="">Selecciona que tonelaje necesitas</option>
+                                <option value="Grúa de 3 toneladas">Grúa de 3 toneladas</option>
+                                <option value="Grúa de 5 toneladas">Grúa de 5 toneladas</option>
+                                <option value="Grúa de 7 toneladas">Grúa de 7 toneladas</option>
+                                <option value="Transporte de maquinaria">Transporte de maquinaria</option>
                             </select>
+                            <div *ngIf="contactForm.get('servicio')?.invalid && contactForm.get('servicio')?.touched" class="invalid-feedback">Se requiere seleccionar un tipo de servicio.</div>
                         </div>
-                        <div class="form-floating mb-3">
-                            <div class="row container">
-                                <div class="col-12">
-                                    <div class="col-md-6">
-                                        <input type="checkbox" name="Opciones" id="Eslingas ">
-                                        <label class="form-check-label" for="flexCheckDefault">Requiero Eslingas </label>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <input type="checkbox" name="Opciones" id="Extensiones ">
-                                        <label class="form-check-label" for="flexCheckDefault">Requiero extensiones </label>
-                                    </div>
-                                </div>   
+                    
+                        <div class="form-floating mb-3 container">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="checkbox" formControlName="eslingas" id="Eslingas">
+                                    <label class="form-check-label" for="Eslingas">Requiero Eslingas</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="checkbox" formControlName="extensiones" id="Extensiones">
+                                    <label class="form-check-label" for="Extensiones">Requiero extensiones</label>
+                                </div>
                             </div>
                         </div>
-
+                    
                         <div class="form-floating mb-3">
-                            <textarea class="form-control" name="textarea" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem"></textarea>
+                            <textarea class="form-control" formControlName="message" id="message" placeholder="Enter your message here..." style="height: 10rem"></textarea>
                             <label for="message">Mensaje</label>
-                            <div class="invalid-feedback">Por favor escriba su consulta.</div>
+                            <div *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched" class="invalid-feedback">Por favor escriba su consulta.</div>
                         </div>
-
-                        <a href="../Pages/exito.html"><div class="d-grid">  <button class="btn btn-xl disabled" id="submitButton">Enviar</button></div></a>
-                   
+                    
+                        <div class="d-grid">
+                            <button class="btn btn-primary btn-xl" type="submit" [disabled]="contactForm.invalid">Enviar</button>
+                        </div>
+                    </form>
+                    
                     
                 </div>
-                
             </div>
-            
-            
+
             <div class="col-sm-6">
                 <div class="col-sm-12">
                     <div class="accordion accordion-flush" id="accordionFlushExample">
@@ -69,7 +75,7 @@
                             </h2>
                             <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                                 <div class="accordion-body">
-                                    Nuestro servicio de arriendo con operador incluye un operador certificado y combustible. Mínimo de 2 horas a contar desde que nuestra maquina deja nuestra instalación hasta que vuelve.
+                                    Nuestro servicio de arriendo con operador incluye un operador certificado y combustible. Mínimo de 2 horas a contar desde que nuestra máquina deja nuestra instalación hasta que vuelve.
                                 </div>
                             </div>
                         </div>
@@ -104,9 +110,9 @@
                                 </button>
                             </h2>
                             <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
-                            <div class="accordion-body">
-                               Si tu atención requiere algún implemento adicional, como extensiones o eslingas, ¡no dudes en solicitarlas! estos implementos vienen incluidos dentro del precio del servicio. 
-                            </div>
+                                <div class="accordion-body">
+                                    Si tu atención requiere algún implemento adicional, como extensiones o eslingas, ¡no dudes en solicitarlas! Estos implementos vienen incluidos dentro del precio del servicio. 
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -115,4 +121,19 @@
         </div>
     </div>
 
-</section>   
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="successModalLabel">Éxito</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Tu mensaje ha sido enviado con éxito. En brevedad nos pondremos en contacto contigo.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
