@@ -8,7 +8,7 @@ import { FormularioComponent } from './formulario/formulario.component';
   declarations: [],
   imports: [
     CommonModule,
-    FormularioComponent
+    FormularioComponent,
   ]
 })
 export class FormularioModule { }

@@ -1,0 +1,82 @@
+/* Manteniendo el main y section uno debajo del otro */
+#wrapper {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+/* Ajustes en el hero */
+#hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 400px;
+    background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+    ), url("../assets/img/10.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    color: #ffff;
+}
+
+#hero h1 {
+    font-size: 4em;
+}
+
+
+
+#somos-rya .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /* Asegura que los márgenes y padding no afecten el ancho */
+}
+
+#somos-rya .img-container {
+    background-image: url("../assets/img/gruaenlacalle.jpg");
+    background-size: cover;
+    background-position: center center;
+    height: 500px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /* Asegura que el tamaño sea calculado correctamente */
+}
+
+#somos-rya .texto {
+    width: 50%;
+    max-width: 400px;
+    text-align: initial;
+    padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño */
+}
+
+
+/* Opcional: Estilos responsivos */
+@media (max-width: 768px) {
+    #somos-rya .container {
+        flex-direction: column;
+    }
+
+    #somos-rya .img-container, #somos-rya .texto {
+        width: 100%; /* En pantallas pequeñas, ocupan el 100% */
+    }
+
+    #somos-rya .texto {
+        padding-left: 0; /* Elimina padding extra en pantallas pequeñas */
+        padding-top: 20px;
+    }
+}
