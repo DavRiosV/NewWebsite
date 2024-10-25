@@ -1,0 +1,71 @@
+/* contacto.component.css */
+.contact-section {
+    background-color: #f4f4f4;
+    padding: 20px;
+  }
+  
+  .contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .contact-form label {
+    margin: 10px 0 5px;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .contact-form button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .contact-form button:hover {
+    background-color: #0056b3;
+  }
+  
+  .contact-info {
+    margin-top: 20px;
+  }
+  
+  .machine-details {
+    margin-top: 50px;
+  }
+  
+  .machine {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .machine h3 {
+    margin-top: 0;
+  }
+  
+  .machine ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .machine ul li {
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+  }
+  
